@@ -1,0 +1,103 @@
+# Error Handling
+
+Our API uses conventional HTTP response codes to indicate the outcome of an API request.  
+Codes in the **2xx** range indicate success, **4xx** indicates client-side issues (such as missing or invalid parameters), and **5xx** indicates server-side errors.
+
+API error responses are returned in JSON format, and the HTTP status code is included in the response headers.  
+While the error message and type may vary, the **error code ID and its meaning remain consistent**.
+
+We aim to fail gracefully whenever possible. When an issue is encountered, the API returns the best available data along with additional warnings, known as **soft errors**. Hard errors are also reported in a structured format.
+
+---
+
+## Hard Errors Example
+
+```json
+{
+  "code": 404001,
+  "type": "Not Found",
+  "message": "The insight associated with the request could not be found: 38f689d83c264eb0b084ba095f2ea332."
+}
+
+```
+
+---
+---
+
+## 4xx Range
+
+### 400 Bad Request
+
+To learn more about usage limits (rate limiting), refer to the Usage Limiting section.
+
+| Code    | Type                              | Description                                                                 |
+|---------|-----------------------------------|-----------------------------------------------------------------------------|
+| 400001  | Invalid Body Parameters           | The entries provided as body parameters were not valid for the request.     |
+| 400002  | Invalid Query Parameters          | The entries provided as query parameters were not valid for the request.    |
+| 400003  | Missing Required Body Parameters  | The request is missing some required body parameters.                       |
+| 400004  | Missing Required Query Parameters | The request is missing the required query parameters.                       |
+| 400005  | Rule Violation                    | The request violated some logic requirement.                                |
+| 400006  | Missing Required Header Parameters| The request is missing some required header parameters.                     |
+| 400007  | Invalid Path Parameters           | The entries provided as path parameters were not valid for the request.     |
+
+---
+
+### 401 Unauthorized
+
+| Code    | Type        | Description                                                                        |
+|---------|-------------|------------------------------------------------------------------------------------|
+| 401001  | Invalid Key | The method requires authentication, but the key was not provided or is invalid.   |
+
+---
+
+### 402 Payment Required
+
+| Code    | Type               | Description                                   |
+|---------|--------------------|-----------------------------------------------|
+| 402001  | Insufficient Tokens | Adding additional tokens is required.        |
+
+---
+
+### 403 Forbidden
+
+| Code    | Type             | Description                                                                           |
+|---------|------------------|---------------------------------------------------------------------------------------|
+| 403001  | Access Denied    | The authentication token in use cannot access the requested resource.                |
+| 403002  | Account Limit    | The plan limit for a resource has been reached.                                      |
+| 403003  | Forbidden Action | The plan is restricted and cannot perform this action.                               |
+
+---
+
+### 404 Not Found
+
+| Code    | Type      | Description                    |
+|---------|-----------|--------------------------------|
+| 404001  | Not Found | A resource ID was not found.   |
+
+---
+
+## 5xx Range
+
+### 500 Internal Server Error
+
+| Code    | Type     | Description                                                        |
+|---------|----------|--------------------------------------------------------------------|
+| 500001  | Unknown  | Possibly a temporary issue due to downtime. Retry the operation later. |
+
+---
+
+### 503 Service Unavailable
+
+| Code    | Type        | Description                                                                                             |
+|---------|-------------|---------------------------------------------------------------------------------------------------------|
+| 503001  | Unavailable | Service is currently unavailable. Please wait and retry the operation. Supporting header: `Retry-After` |
+
+---
+
+## Request ID
+
+Each API request has a unique request identifier.
+You can find this value in the response headers under X-Correlation-ID.
+
+If you need support with a specific request, providing this identifier will ensure the fastest resolution.
+

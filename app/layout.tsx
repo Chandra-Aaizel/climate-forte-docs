@@ -6,14 +6,14 @@ import "nextra-theme-docs/style.css";
 export const metadata = {
   // Define your metadata here
   // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
-  title: "ClimateForte Docs",
+  title: " ClimateForte Docs",
   description: "Documentation for ClimateForte",
 };
 
 const banner = <Banner storageKey="some-key">ClimateForte version 1.0 </Banner>;
 const navbar = (
   <Navbar
-    logo={<b>ClimateForte Docs</b>}
+    logo={<b>🌦️ ClimateForte Docs</b>}
     // ... Your additional navbar options
   />
 );
