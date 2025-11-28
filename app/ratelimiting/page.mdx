@@ -1,0 +1,38 @@
+# Rate Limiting & Tokens
+
+## Rate Limiting
+
+According to your plan, you are limited to a certain amount of requests per hour and day to any of the API endpoints. You can check the returned HTTP headers to get your current rate limits status.
+
+When surpassing your rate-limiting you will get a response with a **429 error code**.
+
+Getting the remaining rate-limits in the header is currently available only for Enterprise accounts:
+
+### Rate-Limit Headers
+
+| Headers | Description |
+|--------|-------------|
+| `X-RateLimit-Limit-second` • `X-RateLimit-Limit-day` • `X-RateLimit-Limit-hour` | The maximum number of requests that the API key is permitted to make per second/day/hour. |
+| `X-RateLimit-Remaining-second` • `X-RateLimit-Remaining-day` • `X-RateLimit-Remaining-hour` | The number of requests remaining in the current rate limit window. |
+
+> If you need a higher rate limit, please reach out to **tsales@tomorrow.io**.
+
+---
+
+## Tokens
+
+In case you are using the API through the token system, you will see the following headers in the response where `{product}` is the relevant product that your request deducted tokens from.
+
+| Header | Description |
+|--------|-------------|
+| `X-Tokens-Cost-{product}` | The number of tokens the following `{product}` request cost. |
+| `X-Tokens-Remaining-{product}` | The number of tokens remaining for the specific `{product}`. |
+
+### Supported `{product}` values
+
+- Historical  
+- On demand events
+
+---
+
+If you have multiple API keys, each one is assigned its own rate limits and tokens. The balance of each key is deducted with every request made using that specific API key.
