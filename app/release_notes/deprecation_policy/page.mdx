@@ -1,0 +1,16 @@
+# Deprecation Policy
+---
+
+All good things must end, but it’s the less-than-good things that must end a lot sooner. Supporting out-dated features negatively impacts the value that we bring to our customers as well as the teams that support them. With this in mind, our goal is to minimize the impact on their organization with timely announcements, training, always-available customer care, and most importantly, an improved alternative to the deprecated functionality.
+
+We will begin to communicate the plans for feature deprecation of GA versions no later than 6 months in advance of the End of Life date. A list of feature deprecation plans will be maintained on Release Notes, and you will be notified with a series of email communications in order to minimize any surprises for your teams. In these announcements we won’t only state what’s changing, we’ll also detail the preparation work, how the changes will be rolled out, and when the feature will be rolled out or replaced. We will also make sure to include a message/banner on all pages which mentions the end-date to alert developers who may arrive there via a deep link from a search, as well as a machine-readable approach using headers.
+
+### Retirement Process
+The Tomorrow.io REST Weather API is actually a set of APIs, called "API groups", and each API group is independently versioned. API versions fall into 3 main tracks, each of which has different policies for deprecation: GA (general availability, like v1), Beta (pre-release, like v4-beta), and Alpha (experimental, like v4-alpha).
+
+- A given release can support any number of API groups and any number of versions of each. The following rules govern the deprecation of elements of the API and are enforced between official releases, not between arbitrary commits to master or release branches.
+- An API version may not be deprecated until a new API version at least as stable is released, such that GA API versions can replace any versions, and Beta API versions may not replace GA API versions.
+- Older API versions must be supported after their announced deprecation for a duration of no less than 6 months for GA, 3 months for Beta, and 1 month for Alpha.
+- Endpoints, resources, fields, and enumerated or constant values continue to exist and function in releases up to and including the current API version, but once the version has aged out, they can cease to exist.
+- Alongside deprecation announcements, API endpoints will specify a response header called X-API-Deprecation-Date with an ISO-8601 timestamp as a consistent, machine-readable approach.
+- API endpoints that have a deprecation process underway will "rolling blackout" approach, where your endpoints return an HTTP 410 Gone for a short period of time (a few minutes) every two hours. This will help alert any remaining consumers about the upcoming shutdown.

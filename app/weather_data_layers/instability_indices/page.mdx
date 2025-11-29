@@ -1,0 +1,13 @@
+# Instability Indices
+---
+
+| Instability Indices Layer | Definition | Calculations |
+|----------------------------|------------|--------------|
+|CAPE|Convective Available Potential Energy (CAPE) is a measure of the amount of buoyant energy available to accelerate an air parcel upward. It represents the potential strength of thunderstorms, updrafts, and severe weather. Units J/Kg|CAPE = g[(Tp​−Te)/Te​​] X Δz, Tp= parcel temperature (K), Te = environmental temperature (K), Δz thickness of the positively buoyant layer (LFC to EL)|
+|CIN|Convective Inhibition (CIN) is the amount of energy that prevents an air parcel from rising. It represents the negative buoyant energy the parcel must overcome before it can reach the Level of Free Convection (LFC) and start rising freely. Units J/Kg|CIN = -g[(Tp​−Te)/Te​​] X Δz|
+|K Index|Measure of the potential for air parcels to rise and produce thunderstorms, based on temperature and dew point data from different pressure levels. Units based on Temperature unit|K=(T850​−T500​)+Td,850​−(T700​−Td,700​)|
+Lifted Index|The Lifted Index (LI) is a widely used stability index in meteorology that measures the buoyancy of an air parcel relative to its environment. Unit based on Temperature unit|LI=T500​−Tp,500​|
+|TT Index|Totals Totals Index (TT Index) is a severe weather and thunderstorm potential index derived from temperature and moisture in the lower and mid-troposphere. It combines lapse rate and moisture to estimate atmospheric instability. Units of Temperature|TT=(T850​−T500​)+(Td,850​−T500​)|
+|Low Level Jet Index| Low Level Jet Index quantitative measure of the strength of the low-level jet (usually in the 850–925 hPa layer or within the lowest 1 km).|LLJ=V850​−V700​|4
+|Showalter Index (SI)|Atmospheric stability index used to assess thunderstorm potential. It evaluates how stable or unstable the atmosphere is by lifting an air parcel from 850 hPa and comparing its temperature to the environment at 500 hPa.|SI=T500​−Tp,500​|
+|Parcel Totals Index (PT)|The Parcel Totals Index (PT Index) is a simple instability index that combines temperature and moisture at 850 hPa to give a rough estimate of thunderstorm potential.|PT=T850​+Td,850​|

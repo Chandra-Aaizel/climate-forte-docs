@@ -1,0 +1,60 @@
+# Core
+---
+
+| Core Weather Parameter | Definition | Calculations |
+|------------------------|------------|--------------|
+| Cloud Base Height (CBH) | CBH is an important characteristic linked to cloud type that describes the influence of clouds on the environment. Units are in meters or km. | NA |
+|Cloud Top Height (CTH)|CTH is defined as that particular height abive the Earths surface at which cloud layer Terminates. Units in meters or Km.|NA |
+|Cloud Top Temperature (CTT)|CTT is defined as the temperature at cloud top and is used to monitor cloud top chnages during convection. Units in Kelvin|NA|
+|Cloud Top Pressure (CTP)|CTP is derived from CTT and is considered equivalent to cloud top height above mean sea level. Units hPa|P(CTP) = P(T=CTT) finding the pressure level at which temperature equals the cloud top temperature. |
+|Cloud Fraction (CF)|CF  represents the fractional area covered by clouds as observed from above by satellites. |It is estimated by counting the number of satellite fields-of-view (called pixels)  that are determined to be cloudy and dividing by the total number of pixels in a region. |
+|Cloud Types |Cloud Types - clouds are grouped by the altitude of their base and by their apperances|NA|
+|Apparant Temperature|Temperature felt by human body (felt air temperature) Heat index is another term for apparant temperature. Units Kelvin|HI=T+0.33e−0.70−4.00, T = air temperature at 2m, e is vapour pressure e=RH×6.105×exp(237.7+T17.27T​)/100|
+|Dew point Temperature|Temperature at which air becomes satured with respect to water vapor, leading to condensation. Units Kelvin|Td = 237.7[ln(RH/100) + (17.27T/237.7 + T)]/17.27 - [ln(RH/100) + (17.27T/237.7 + T)]|
+|Potential Temperature|Temperature that a parcel of dry air would attain if brought dry adiabatically to surface. Units Kelvin|θ = T(1000/p)^0.286|
+|Virtual Temperature|Virtual Temperature is the temperature at which dry air would have the same density as the moist air, at a given pressure. Units Kelvin|Tv = T(1 + 0.61q), T = air temperature , q is specific humidity|
+|Dew point depression|Difference between temperature and dewpoint temperature. Units (Kelvin)|T-Td|
+|Relative Humidity| Ratio of the vapor pressure of water vapor in the air to the vapor pressure of water vapor when the air is saturated, expressed as a percentage|RH = (e/es) X 100% |
+|Specific Humidity |Specific humidity focuses on the mass of water vapor compared to the total mass of the air parcel, including both dry air and the vapor. Units (g/Kg)|q = 0.622e/p-0.378e here e is vapour pressure. p = pressure level.|
+|Mixing Ratios|Ratio of mass of water vapor to the maa of dry air in a volumn of air. Units g/Kg|r = 0.622 X (e/p - e), e is vapour pressure and p is air pressure |
+|Sea Level Pressure|Sea level pressure refers to the atmospheric pressure at mean sea level, defined as 1013.25 hPa or 1 atm|NA|
+|Surface Pressure|Atmospheric pressure at a given spot in Earth surface is known as surface pressure. Units hPa.|NA|
+|Precipitation forms (Rain, Snow, Ice, Graupel, Hail)|Precipitation is a vital process in the Earth’s atmosphere, where water in liquid (Rainfall) or solid form (Hail, Ice, Snow, Graupel) falls from clouds and reaches the ground.  Units mm/hr|NA|
+|Wind Gust|Wind gust is the suddent burst of stronger winds. Units m/sec|NA|
+|Storm Relative Helicity (SRH)|SRH is an indicator used to measure the potential of storm rotation. It is the rate of change of winds in a particular direction. Units m2/sec2|SRH=∫((v−cv)⋅(∂u/∂z)−(u−cu)⋅(∂v/∂z)))dz|
+|Thunderstorm Probability (Energy Helicity Index) |Energy Helicity Index is a function of CAPE and storm relative helicity (SRH). No units dimensionless.|EHI = (CAPE X SRH)/160,000|
+|Atmospheric Boundary Layer Height|Atmospheric Boundary Layer (ABL) height defines the volume of air within which heat, moisture and pollutants released at the Earth’s surface are rapidly diluted. Units m/Km|h≈1000+120Ts​ (Day time boundary layer, Ts is surface temperature).|
+|Geopotential Height |Geopotential height (H) is a widely used metric for atmospheric circulation. Height of a pressure surface in the atmosphere by accounting for the variation of gravity with latitude and altitude. Units in m|H= Φ(z)​/g0, Φ(z) is geopotential and g0 is standard gravity at sea level (9.8m/sec2)|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
