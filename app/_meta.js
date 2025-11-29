@@ -1,9 +1,9 @@
 const metaData = {
     Fundamental:{
         type :"separator",
-        title : "Fundamental"
+        title : "Fundamentals"
     },
-    docs : "Climate Forte Docs",
+    docs : "Climate Forte APIs",
     access : "Access Key",
     versioning : "Versioning",
     errorHandling: "Error Handling",

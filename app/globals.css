@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 @import "nextra-theme-docs/style.css";
-@import "./custom.css";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 :root {
   --font-roboto: 'Roboto', sans-serif;
 }

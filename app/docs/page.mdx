@@ -1,1 +1,140 @@
-# welcome
+import React from 'react'
+import { operations, weatherCards, endpoints, recipeCards } from '../helpers/data'
+import { MoveRight } from 'lucide-react';
+import { FaPlayCircle } from "react-icons/fa";
+import Image from 'next/image'
+
+export const getBadgeColors = (title) => {
+  switch (title) {
+    case "Air quality":
+      return "bg-green-400"
+    case "Fire":
+      return "bg-red-400"
+    case "Core":
+      return "bg-blue-600"
+    case "Maritime":
+      return "bg-teal-400"
+    case "Flood":
+      return "bg-blue-200"
+    case "Lightning":
+      return "bg-gray-400"
+    case "Soil":
+      return "bg-yellow-300"
+    case "Solar":
+      return "bg-purple-400"
+    case "Pollen":
+      return "bg-indigo-900"
+    default:
+      return "bg-gray-200"
+  }
+}
+
+
+## Improve Business Operations
+
+Whether you’re aiming to ensure employee safety, alert customers of future weather events, or incorporate more reliable weather data in your own software application, the Tomorrow.io Weather API offers a comprehensive collection of ultra-accurate data organized into endpoints for the utmost ease-of-use and efficiency.
+
+<br />
+<div className="max-w-6xl w-full my-5">
+
+    <div className="w-full grid lg:grid-cols-2 gap-8 place-content-center my-7">
+      {operations.map((item, ind) => (
+        <div key={ind} className="flex flex-col gap-2 h-auto mt-3 md:mt-0">
+          <div className="rounded-md h-auto w-full">
+            <Image
+            src={item.image}
+            width={400}
+            height={320}
+            className="object-cover rounded-md"
+            alt={item.title}
+            />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <h2 className="text-xl font-bold">{item.title}</h2>
+            <p className="text-gray-600">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <br/><br/>
+
+    ## Data Catalog
+
+    With more than 80 different data fields, including weather, air quality, pollen, road risk and fire index, you can build almost anything. Improving your project with the Tomorrow.io Weather API.
+
+    <div className="w-full grid lg:grid-cols-2  gap-8 md:gap-6 place-content-center mt-15">
+      {weatherCards.map((item, ind) => (
+        <div
+          key={ind}
+          className="flex flex-col relative gap-2 h-auto border border-gray-200 rounded-xl p-4 hover:shadow-xl duration-200 ease-in-out cursor-pointer"
+        >
+          <h2
+            className={`absolute -top-4 left-4 ${getBadgeColors(item.title)} text-white py-1 px-4 rounded-md font-semibold`}
+          >
+            {item.title}
+          </h2>
+
+          <p className="text-gray-500 min-h-25 h-full my-5">{item.description}</p>
+
+          <button className="flex gap-1 items-center mb-4 outline-0 text-blue-600 cursor-pointer
+          ">
+            <span className="font-semibold">Read More</span>
+            <MoveRight />
+          </button>
+        </div>
+      ))}
+    </div>
+
+    <br/><br/>
+
+    ## Explore Our Endpoints
+
+    <div className="w-full grid lg:grid-cols-2 gap-6 place-content-center mt-5">
+       {endpoints.map((item, ind) => (
+        <div key={ind} className="flex gap-3 h-auto text-sm p-4 cursor-pointer" >
+          <item.icon size={20} className="text-blue-500 shrink-0" />
+          <div className="flex flex-col gap-2">
+          <h2 className="capitalize text-blue-500 text-base hover:underline">{item.title}</h2>
+          {item.description}
+          </div>
+        </div>
+       ))}
+    </div>
+
+    <br/><br/>
+    ## Featured Recipes
+    <div className="w-full grid lg:grid-cols-2 gap-6 place-content-center mt-5">
+       {recipeCards.map((item, ind) => {
+        const Icon = item.icon.component;
+
+        return (
+            <div key={ind} className="flex flex-col gap-3 h-auto text-sm text-gray-500 border border-gray-200 rounded-xl p-5 cursor-pointer hover:-translate-y-1 shadow-lg
+            hover:duration-400 hover:shadow-xl ease-in-out" >
+                <Icon size={20} color={item.icon.color} className="shrink-0" />
+                <div className="flex flex-col gap-2 ">
+                <h2 className="font-semibold text-lg text-black">{item.title}</h2>
+                {item.description}
+                <p className="flex gap-1 text-[10px] mt-4">
+                  {item.tags.map((t, ind) => (
+                    <span key={ind+1} className="text-blue-500 bg-blue-100 py-1 px-2 rounded-md font-semibold">
+                    / {t}</span>
+                  ))}
+                </p>
+
+                <button className="w-full flex items-center gap-3 mt-4 hover:text-blue-500 cursor-pointer">
+                 <FaPlayCircle size={40} className="shrink-0 text-white bg-orange-500 p-1 rounded-md" />
+                  <span className="font-semibold bg-gray-100 p-3 rounded-md w-full">Open Recipe</span>
+                </button>
+                </div>
+            </div>
+        )
+       })}
+    </div>
+    
+</div>
+
+
+
+

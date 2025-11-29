@@ -1,8 +1,10 @@
+import { Tabs } from 'nextra/components'
+
 # Get Started
 
 This guide walks you through the initial setup: creating an account, signing in, accessing the dashboard, creating an application/client, and using the weather APIs.
 
----
+<br/>
 
 ## 1. Create an Account
 
@@ -19,7 +21,7 @@ Follow these steps to register a new user:
 
 After registration, you will be redirected back to the login page.
 
----
+<br/><br/>
 
 ## 2. Sign In
 
@@ -31,7 +33,7 @@ To access your dashboard:
 
 If authentication succeeds, you will be redirected to the user Dashboard.
 
----
+<br/><br/>
 
 ## 3. Dashboard Overview
 
@@ -45,7 +47,31 @@ The dashboard provides access to all available features:
 
 The dashboard serves as the central hub for development and API integration.
 
----
+__Authentication__
+
+<Tabs items={['Query Parameters', 'Request Header']}>
+
+  <Tabs.Tab>
+    ```bash
+    curl --request POST \
+      --url 'https://api.tomorrow.io/v4/locations?apikey=API_KEY' \
+      --header 'content-type: application/json'
+    ```
+  </Tabs.Tab>
+
+  <Tabs.Tab>
+    ```bash
+    curl --request POST \
+      --url 'https://api.tomorrow.io/v4/locations' \
+      --header 'apikey: API_KEY' \
+      --header 'content-type: application/json'
+    ```
+  </Tabs.Tab>
+
+</Tabs>
+
+
+<br/><br/>
 
 ## 4. Create an Application / Client
 
@@ -67,7 +93,7 @@ Upon creation, the system will generate:
 
 Store these credentials securely. They are required for API authentication.
 
----
+<br/><br/>
 
 ## 5. Access the Weather APIs
 

@@ -8,7 +8,7 @@ While the error message and type may vary, the **error code ID and its meaning r
 
 We aim to fail gracefully whenever possible. When an issue is encountered, the API returns the best available data along with additional warnings, known as **soft errors**. Hard errors are also reported in a structured format.
 
----
+<br/>
 
 ## Hard Errors Example
 
@@ -21,8 +21,7 @@ We aim to fail gracefully whenever possible. When an issue is encountered, the A
 
 ```
 
----
----
+<br/><br/>
 
 ## 4xx Range
 
@@ -40,7 +39,7 @@ To learn more about usage limits (rate limiting), refer to the Usage Limiting se
 | 400006  | Missing Required Header Parameters| The request is missing some required header parameters.                     |
 | 400007  | Invalid Path Parameters           | The entries provided as path parameters were not valid for the request.     |
 
----
+<br/>
 
 ### 401 Unauthorized
 
@@ -48,7 +47,7 @@ To learn more about usage limits (rate limiting), refer to the Usage Limiting se
 |---------|-------------|------------------------------------------------------------------------------------|
 | 401001  | Invalid Key | The method requires authentication, but the key was not provided or is invalid.   |
 
----
+<br/>
 
 ### 402 Payment Required
 
@@ -56,7 +55,7 @@ To learn more about usage limits (rate limiting), refer to the Usage Limiting se
 |---------|--------------------|-----------------------------------------------|
 | 402001  | Insufficient Tokens | Adding additional tokens is required.        |
 
----
+<br/>
 
 ### 403 Forbidden
 
@@ -66,7 +65,7 @@ To learn more about usage limits (rate limiting), refer to the Usage Limiting se
 | 403002  | Account Limit    | The plan limit for a resource has been reached.                                      |
 | 403003  | Forbidden Action | The plan is restricted and cannot perform this action.                               |
 
----
+<br/>
 
 ### 404 Not Found
 
@@ -74,7 +73,7 @@ To learn more about usage limits (rate limiting), refer to the Usage Limiting se
 |---------|-----------|--------------------------------|
 | 404001  | Not Found | A resource ID was not found.   |
 
----
+<br/>
 
 ## 5xx Range
 
@@ -84,7 +83,7 @@ To learn more about usage limits (rate limiting), refer to the Usage Limiting se
 |---------|----------|--------------------------------------------------------------------|
 | 500001  | Unknown  | Possibly a temporary issue due to downtime. Retry the operation later. |
 
----
+<br/>
 
 ### 503 Service Unavailable
 
@@ -92,7 +91,7 @@ To learn more about usage limits (rate limiting), refer to the Usage Limiting se
 |---------|-------------|---------------------------------------------------------------------------------------------------------|
 | 503001  | Unavailable | Service is currently unavailable. Please wait and retry the operation. Supporting header: `Retry-After` |
 
----
+<br/>
 
 ## Request ID
 
